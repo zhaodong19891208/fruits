@@ -11,7 +11,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-    '/tt':{
+    '/tt':{  
           target: 'https://wap.fruitday.com/',
           pathRewrite: {
             '^/tt': ""
