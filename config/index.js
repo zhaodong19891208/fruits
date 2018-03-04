@@ -16,7 +16,7 @@ module.exports = {
           pathRewrite: {
             '^/tt': ""
           },
-          changeOrigin: true
+          changeOrigin: true 
       }
     },
 
