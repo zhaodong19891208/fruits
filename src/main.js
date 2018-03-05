@@ -9,6 +9,9 @@ import '@/assets/iconfont/iconfont.css'
 import '@/assets/animate/animate.css'
 import FastClick from 'fastclick'
 
+import '../node_modules/swiper/dist/css/swiper.min.css'
+import '../static/fonts-awesome/css/font-awesome.css'
+
 Vue.config.productionTip = false
 FastClick.attach(document.body)
 
