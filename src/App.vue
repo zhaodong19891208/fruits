@@ -10,6 +10,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang = "scss">
+  @import './assets/css/reset.css';
+  @import './assets/css/border.css';
 </style>
