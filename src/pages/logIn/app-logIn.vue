@@ -3,7 +3,7 @@
     <transition  leave-active-class="animated fadeOutLeft" enter-active-class="animated fadeInLeft">
       <div v-if="isLogIn" class="logIn-plone">
           <p>
-              <span class="iconfont">&#xe654;</span>
+             	<router-link :to="{ name: 'home'}"  tag="span" class="iconfont">&#xe654;</router-link>
               <input type="text" placeholder="手机号">
               <i>获取验证码</i>
           </p>

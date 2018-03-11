@@ -26,7 +26,6 @@ export default {
         .catch(this.resErr.bind(this))
     },
     resSuccuss (res) {
-      console.log(res)
       let content = res.data.data.banner.mainBanners
       for (let i = 0; i < content.length; i++) {
         this.banners = content[0].content
@@ -45,7 +44,6 @@ export default {
       })
     },
     resErr (err) {
-      console.log(err)
     }
   },
   created () {

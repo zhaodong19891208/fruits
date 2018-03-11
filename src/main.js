@@ -9,6 +9,7 @@ import '@/assets/iconfont/iconfont.css'
 import '@/assets/animate/animate.css'
 import FastClick from 'fastclick'
 
+import store from "./store"
 import '../node_modules/swiper/dist/css/swiper.min.css'
 import '../static/fonts-awesome/css/font-awesome.css'
 
@@ -18,6 +19,7 @@ FastClick.attach(document.body)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

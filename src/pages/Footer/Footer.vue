@@ -1,10 +1,13 @@
 <template>
-  <footer class="app-footer footer">
-     <a href="#" @click="toggle(footer.id)" :class="[showType==footer.id?addClassName:'']" v-for="footer in footers" :key="footer.id">
+  <footer class="app-footer footer-title">
+     <router-link :to={name:footer.path} @click="toggle(footer.id)" :class="[showType==footer.id?addClassName:'']" v-for="footer in footers" :key="footer.id">
       <i :class='footer.icon'></i>
       <span>{{footer.title}}</span>
-     </a>
+     </router-link>
   </footer>
+
+
+  
 </template>
 
 <script>
@@ -16,10 +19,10 @@ export default {
       showType: '1',
       addClassName: "active",
       footers: [
-        {id: '1',  title: '首页', icon: 'fa fa-home'},
-        {id: '2',  title: '分类', icon: 'fa fa-th-large'},
-        {id: '3',  title: '购物车', icon: 'fa fa-cart-plus'},
-        {id: '4', title: '我的果园', icon: 'fa fa-user'},       
+        {id: '1',  title: '首页', icon: 'fa fa-home', path: "/"},
+        {id: '2',  title: '分类', icon: 'fa fa-th-large', path: "list"},
+        {id: '3',  title: '购物车', icon: 'fa fa-cart-plus', path: "choping"},
+        {id: '4', title: '我的果园', icon: 'fa fa-user', path: "logIn"},       
       ],
     }
   },
@@ -33,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-     .footer {
+     .footer-title{
           z-index:999;
           top: auto;
           bottom: 0;
