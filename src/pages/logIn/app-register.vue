@@ -4,11 +4,13 @@
       <div v-if="isLogIn" class="register-plone">
         <p>
           <span class="iconfont">&#xe654;</span>
-          <input type="text" placeholder="手机号">
+          <input type="text" maxlength="11" v-model="clear"  placeholder="手机号">
+          <em class="iconfont" v-if='clear === "" ? isShow : !isShow' @click="clearValue" >&#xe61b;</em>
         </p>
         <p>
           <span class="iconfont">&#xe608;</span>
-          <input type="password" placeholder="短信验证">
+          <input type="password" v-model="clearV" placeholder="短信验证">
+          <em class="iconfont" maxlength="4" v-if="clearV === '' ? show : !show" @click="clearVa">&#xe61b;</em>
         </p>
           <button>登录</button>
           <div class="logIn-a">
@@ -23,7 +25,23 @@
 <script>
 export default {
   name: 'app-register',
-  props: ['isLogIn', 'animate']
+  props: ['isLogIn', 'animate'],
+  data () {
+    return {
+      isShow: false,
+      show: false,
+      clear: '',
+      clearV: ''
+    }
+  },
+  methods: {
+    clearValue () {
+      this.clear = ''
+    },
+    clearVa () {
+      this.clearV = ''
+    }
+  }
 }
 </script>
 
@@ -49,8 +67,7 @@ export default {
   .register-plone span
      font-size: .5rem
   .register-plone input
-     ::-webkit-input-placeholder
-        font-size: .8rem
+     width: 100%
   .register-plone i
      display: block
      width: 1.4rem
@@ -73,7 +90,7 @@ export default {
      height: .8rem
      margin: 1rem 0 .3rem
      border-radius: .04rem
-     background: #f93
+     background: #bfbfbf
      line-height: .8rem
      font-size: .32 rem
      color: #fff

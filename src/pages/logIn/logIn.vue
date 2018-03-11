@@ -1,8 +1,8 @@
 <template>
   <div class="log-in">
      <div class="logIn-header">
-       <span class="iconfont">&#xe600;</span>
-       <p>手机号快捷登录</p>
+       <span class="iconfont" @click="retreat">&#xe600;</span>
+       <p>{{isLogIn ? this.logIn : this.register}}</p>
     </div>
     <div clss="logIn-animate">
       <app-logIn :isLogIn="isLogIn" :animate="animate"></app-logIn>
@@ -22,12 +22,17 @@ export default {
   },
   data () {
     return {
-      isLogIn: true
+      isLogIn: true,
+      logIn: '手机号快捷登录',
+      register: '账号密码登录'
     }
   },
   methods: {
     animate () {
       this.isLogIn = !this.isLogIn
+    },
+    retreat () {
+      this.$router.go(-1)
     }
   }
 }
